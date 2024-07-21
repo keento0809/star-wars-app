@@ -5,7 +5,7 @@ export const { getClient } = registerApolloClient(() => {
   return new ApolloClient({
     cache: new InMemoryCache(),
     link: new HttpLink({
-      uri: "https://main--spacex-l4uc6p.apollographos.net/graphql",
+      uri: "https://swapi-graphql.netlify.app/.netlify/functions/index",
       fetchOptions: { cache: "no-store" },
     }),
   });
