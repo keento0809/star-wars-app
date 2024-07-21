@@ -16,3 +16,13 @@ query Test {
     }
   }
 }
+
+query Species {
+  species {
+    name
+    classification
+    homeworld {
+      name
+    }
+  }
+}

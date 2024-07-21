@@ -20,3 +20,15 @@ export const QUERY_GET_TEST = gql`
     }
   }
 `;
+
+export const QUERY_SPECIES = gql`
+  query getSpecies {
+    species {
+      name
+      classification
+      homeworld {
+        name
+      }
+    }
+  }
+`;
