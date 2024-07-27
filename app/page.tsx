@@ -1,16 +1,15 @@
 import { getClient } from "./lib/client";
-import styles from "./page.module.css";
-import { TestQuery } from "./graphql/generated";
-import { QUERY_GET_TEST } from "./graphql/client";
+import { FilmsQuery } from "./graphql/generated";
+import { QUERY_FILMS } from "./graphql/client";
 import { HomePage } from "./HomePage";
 
 export default async function Home() {
   const {
-    data: data_test,
+    data: data_films,
     loading,
     error,
-  } = await getClient().query<TestQuery>({
-    query: QUERY_GET_TEST,
+  } = await getClient().query<FilmsQuery>({
+    query: QUERY_FILMS,
   });
 
   if (loading) return <div>Loading now...</div>;
@@ -18,5 +17,5 @@ export default async function Home() {
     return <div>{error.message}</div>;
   }
 
-  return <HomePage data={data_test} />;
+  return <HomePage data={data_films} />;
 }

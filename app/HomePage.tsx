@@ -1,17 +1,23 @@
 "use client";
 
 import { FC } from "react";
-import { TestQuery } from "./graphql/generated";
+import { Film, FilmsQuery } from "./graphql/generated";
+import { List } from "./components/list/List";
 
 type HomePageProps = {
-  data: TestQuery;
+  data: FilmsQuery;
 };
 
 export const HomePage: FC<HomePageProps> = ({ data }) => {
-  console.log(data);
+  const validData =
+    data.allFilms && data.allFilms.films
+      ? data.allFilms.films.filter((d): d is Film => d !== undefined)
+      : [];
+
   return (
     <div>
       <h4>HomePage</h4>
+      <List data={validData} />
     </div>
   );
 };
