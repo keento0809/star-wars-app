@@ -26,3 +26,23 @@ query Species {
     }
   }
 }
+
+query Films {
+  allFilms {
+    films {
+      id
+      title
+      releaseDate
+      created
+      director
+      characterConnection {
+        characters {
+          birthYear
+          created
+          edited
+        }
+        totalCount
+      }
+    }
+  }
+}
