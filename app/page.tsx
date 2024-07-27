@@ -1,14 +1,10 @@
 import { getClient } from "./lib/client";
-import { FilmsQuery } from "./graphql/generated";
+import { Film, FilmsQuery } from "./graphql/generated";
 import { QUERY_FILMS } from "./graphql/client";
 import { HomePage } from "./HomePage";
 
 export default async function Home() {
-  const {
-    data: data_films,
-    loading,
-    error,
-  } = await getClient().query<FilmsQuery>({
+  const { data, loading, error } = await getClient().query<FilmsQuery>({
     query: QUERY_FILMS,
   });
 
@@ -17,5 +13,10 @@ export default async function Home() {
     return <div>{error.message}</div>;
   }
 
-  return <HomePage data={data_films} />;
+  const validData =
+    data.allFilms && data.allFilms.films
+      ? data.allFilms.films.filter((d): d is Film => d !== undefined)
+      : [];
+
+  return <HomePage data={validData} />;
 }
