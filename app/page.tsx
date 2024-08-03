@@ -1,7 +1,8 @@
-import { getClient } from "./lib/client";
-import { Film, FilmsQuery } from "./graphql/generated";
-import { QUERY_FILMS } from "./graphql/client";
+import { getClient } from "./_lib/client";
+import { Film, FilmsQuery } from "./_graphql/generated";
+import { QUERY_FILMS } from "./_graphql/client";
 import { HomePage } from "./HomePage";
+import { useState } from "react";
 
 export default async function Home() {
   const { data, loading, error } = await getClient().query<FilmsQuery>({

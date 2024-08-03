@@ -1,5 +1,5 @@
-import { Film } from "@/app/graphql/generated";
-import { formatDate } from "@/app/utils";
+import { Film } from "@/app/_graphql/generated";
+import { formatDate } from "@/app/_utils";
 
 type ListProps<T> = {
   data: Array<T>;

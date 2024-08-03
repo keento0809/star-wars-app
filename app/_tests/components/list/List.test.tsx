@@ -1,4 +1,4 @@
-import { List } from "@/app/components/list/List";
+import { List } from "@/app/_components/list/List";
 import { screen, render } from "@testing-library/react";
 import { mockFilms } from "../../homePage/HomePage.test";
 

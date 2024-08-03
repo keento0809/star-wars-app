@@ -1,7 +1,7 @@
 "use client";
 
-import { Film } from "./graphql/generated";
-import { List } from "./components/list/List";
+import { Film } from "./_graphql/generated";
+import { List } from "./_components/list/List";
 
 type HomePageProps = {
   data: Film[];

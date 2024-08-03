@@ -1,6 +1,6 @@
 import { HomePage } from "@/app/HomePage";
 import { render, screen } from "@testing-library/react";
-import { Film } from "@/app/graphql/generated";
+import { Film } from "@/app/_graphql/generated";
 import "@testing-library/jest-dom";
 
 export const mockFilms: Film[] = [
