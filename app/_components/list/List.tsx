@@ -6,7 +6,6 @@ type ListProps<T> = {
 };
 
 export const List = <T extends Film>({ data }: ListProps<T>) => {
-  console.log("data in a child component: ", data);
   return (
     <ul>
       {data?.map((d) => {

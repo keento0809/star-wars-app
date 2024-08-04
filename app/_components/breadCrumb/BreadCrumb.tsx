@@ -1,51 +1,48 @@
 "use client";
 
-import { Fragment, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { BREADCRUMB_ARRAY } from "./_constants";
 
-export const Breadcrumb = ({ separator }: { separator: ReactNode }) => {
+export const Breadcrumb = () => {
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
 
+  const separator = <span className="inline-block px-2">＞</span>;
+  const defaultBreadCrumb = (
+    <li className="font-medium leading-8 hover:cursor-pointer">
+      <Link href="/">トップページ</Link>
+    </li>
+  );
+
   // スラッグでタイトルを変える
   const getBreadcrumbTitle = (link: (typeof pathNames)[0]) => {
-    switch (link) {
-      case "guidebooks":
-        return "breadcrumbs.guidebook";
-
-      case "beginner-guide":
-        return "breadcrumbs.origamiBeginnerGuide";
-
-      case "how-to-fold-origami":
-        return "breadcrumbs.howToFoldOrigami";
-
-      case "how-to-send-origami":
-        return "breadcrumbs.howToSendOrigami";
-
-      case "about-match":
-        return "breadcrumbs.aboutMatch";
-
-      case "about-marketplace":
-        return "breadcrumbs.aboutMarketplace";
-
-      default:
-        return "Home";
+    const correspondingObj = BREADCRUMB_ARRAY.find(
+      (obj) => obj["routeKeyword"] === link
+    );
+    if (!correspondingObj) {
+      return null;
     }
+    return correspondingObj["label"];
   };
 
   return (
     <ul className="flex items-center gap-1 text-xs text-gray-purple">
+      {defaultBreadCrumb}
       {pathNames.map((link, index) => {
         const href = `/${pathNames.slice(0, index + 1).join("/")}`;
+        const breadCrumbTitle = getBreadcrumbTitle(link);
 
         return (
-          <Fragment key={link}>
-            <li className="font-medium leading-8 hover:underline">
-              <Link href={href}>{getBreadcrumbTitle(link)}</Link>
-            </li>
-            {pathNames.length !== index + 1 && separator}
-          </Fragment>
+          <li key={link}>
+            {index === 0 && breadCrumbTitle !== null && separator}
+            <span className="font-medium leading-8 hover:cursor-pointer">
+              <Link href={href}>{breadCrumbTitle}</Link>
+            </span>
+            {pathNames.length !== index + 1 &&
+              breadCrumbTitle !== null &&
+              separator}
+          </li>
         );
       })}
     </ul>
