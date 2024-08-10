@@ -1,21 +1,14 @@
-import { getClient } from "./lib/client";
-import { FilmsQuery } from "./graphql/generated";
-import { QUERY_FILMS } from "./graphql/client";
+import { getFilmData } from "./_lib/client";
 import { HomePage } from "./HomePage";
 
 export default async function Home() {
-  const {
-    data: data_films,
-    loading,
-    error,
-  } = await getClient().query<FilmsQuery>({
-    query: QUERY_FILMS,
-  });
+  try {
+    const validData = await getFilmData();
 
-  if (loading) return <div>Loading now...</div>;
-  if (error) {
-    return <div>{error.message}</div>;
+    return <HomePage data={validData} />;
+  } catch (error) {
+    console.error(error);
+
+    throw new Error(`failed to fetch data: ${error}`);
   }
-
-  return <HomePage data={data_films} />;
 }
