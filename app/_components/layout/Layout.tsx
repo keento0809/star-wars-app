@@ -3,6 +3,8 @@
 import { FC, ReactNode } from "react";
 import { useModalStore } from "@/app/_store/store";
 import { Portal } from "../portal/Portal";
+import { Nav } from "../nav/Nav";
+import { Footer } from "../footer/Footer";
 
 type LayoutProps = {
   children: ReactNode;
@@ -18,7 +20,9 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
         onClose={closeModal}
         modalContents={modalContents}
       />
+      <Nav />
       {children}
+      <Footer />
     </div>
   );
 };

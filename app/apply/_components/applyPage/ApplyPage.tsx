@@ -18,9 +18,19 @@ export const ApplyPage: FC = () => {
   return (
     <div className="portal p-6">
       <Breadcrumb />
-      <button onClick={errorToast}>Show Error</button>
-      <div className="py-4">
-        <button onClick={() => openModal(renderModalContents())}>Submit</button>
+      <div className="py-8 flex flex-col gap-6 w-1/5 mr-auto">
+        <button
+          onClick={errorToast}
+          className="px-6 py-2 rounded-xl border border-lime-500 font-normal text-lg"
+        >
+          Show Error
+        </button>
+        <button
+          onClick={() => openModal(renderModalContents())}
+          className="px-6 py-2 rounded-xl border font-normal text-lg border-orange-500"
+        >
+          Submit
+        </button>
       </div>
     </div>
   );

@@ -7,11 +7,11 @@ type ListProps<T> = {
 
 export const List = <T extends Film>({ data }: ListProps<T>) => {
   return (
-    <ul>
+    <ul className="flex flex-wrap items-center gap-8">
       {data?.map((d) => {
         return (
-          <li key={d.id} className="py-3">
-            <div className="py-1">{d.title}</div>
+          <li key={d.id} className="p-2">
+            <div className="py-1 underline">{d.title}</div>
             <div className="py-1">
               {d.created ? formatDate(d.created) : ""} {d.edited}
             </div>
