@@ -1,9 +1,10 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Film } from "./_graphql/generated";
 import { List } from "./_components/list/List";
 import { Footer } from "./_components/footer/Footer";
+import { useModalStore } from "./_store/store";
 import { notificationToast } from "./_components/toast/Toast";
 import Link from "next/link";
 
@@ -12,7 +13,7 @@ type HomePageProps = {
 };
 
 export const HomePage: FC<HomePageProps> = ({ data }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { openModal } = useModalStore();
 
   const newData = data.map((d) => {
     return { ...d, type: "film" };
@@ -31,7 +32,7 @@ export const HomePage: FC<HomePageProps> = ({ data }) => {
         <div className="py-8 flex flex-col gap-8">
           <button
             className="border-purple-500 border py-2 px-6 rounded-lg"
-            onClick={() => setIsOpen(true)}
+            onClick={() => openModal(<div>aaaaaaa</div>)}
           >
             Open Modal
           </button>

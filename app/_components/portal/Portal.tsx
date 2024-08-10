@@ -8,13 +8,13 @@ import { createPortal } from "react-dom";
 type PortalProps = {
   isModalOpen?: boolean;
   modalContents?: ReactNode;
-  onModalClose?: () => void;
+  onClose?: () => void;
 };
 
 export const Portal: FC<PortalProps> = ({
   isModalOpen = false,
   modalContents,
-  onModalClose = () => {},
+  onClose = () => {},
 }) => {
   const [mounted, setIsMounted] = useState(false);
 
@@ -24,9 +24,9 @@ export const Portal: FC<PortalProps> = ({
 
   return mounted && typeof window === "object"
     ? createPortal(
-        <div className="これはポーたんる">
+        <div className="this-is-portal">
           {isModalOpen && (
-            <Modal onClose={onModalClose}>
+            <Modal onClose={onClose}>
               <div className="modal-contents">
                 {modalContents ? modalContents : "modal"}
               </div>

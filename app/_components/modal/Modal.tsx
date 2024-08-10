@@ -1,6 +1,5 @@
 import { FC, ReactNode } from "react";
 import { X } from "lucide-react";
-import Link from "next/link";
 
 type ModalProps = {
   children: ReactNode;
@@ -16,10 +15,7 @@ export const Modal: FC<ModalProps> = ({ children, onClose }) => (
     >
       <X size={16} className="block m-6" />
     </button>
-    <div className="min-h-[100svh] flex justify-center items-center">
-      <div className="py-8">
-        <Link href="/apply">Apply</Link>
-      </div>
+    <div className="min-h-[100svh] この中身がmodal-contentです flex justify-center items-center">
       {children}
     </div>
   </div>
