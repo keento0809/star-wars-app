@@ -25,7 +25,5 @@ export const getFilmData = cache(async () => {
       ? data.allFilms.films.filter((d): d is Film => d !== undefined)
       : [];
 
-  console.log("have some fun!!");
-
   return validFilmData;
 });

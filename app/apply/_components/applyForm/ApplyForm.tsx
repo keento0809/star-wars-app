@@ -1,13 +1,20 @@
 "use client";
 
-import { getFilmData } from "@/app/_lib/client";
 import { FC } from "react";
 
+type FormSchema = {
+  id: string;
+  name: string;
+  age: number;
+  isOk: boolean;
+};
+
 export const ApplyForm: FC = () => {
-  getFilmData()
-    .then((res) => console.log("res: ", res))
-    .catch((error) => console.log(error));
   return <div>ApplyForm</div>;
 };
 
 export default ApplyForm;
+
+function isFormSchema(item: unknown): item is FormSchema {
+  if (typeof item !== "object" && item === null) return false;
+}
