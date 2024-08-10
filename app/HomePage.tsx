@@ -1,17 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Film } from "./_graphql/generated";
 import { List } from "./_components/list/List";
-import { Breadcrumb } from "./_components/breadCrumb/BreadCrumb";
-import { Modal } from "./_components/modal/Modal";
 import { Footer } from "./_components/footer/Footer";
+import { notificationToast } from "./_components/toast/Toast";
+import Link from "next/link";
 
 type HomePageProps = {
   data: Film[];
 };
 
-export const HomePage = ({ data }: HomePageProps) => {
+export const HomePage: FC<HomePageProps> = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const newData = data.map((d) => {
@@ -19,25 +19,30 @@ export const HomePage = ({ data }: HomePageProps) => {
   });
 
   return (
-    <div>
-      {isOpen && (
-        <Modal onClose={() => setIsOpen(false)}>
-          <div>Modal contents</div>
-        </Modal>
-      )}
-      <div className="text-purple-500 font-bold text-xl">
-        <h2 className="pb-4">この下は、breadCrumb</h2>
-        <div className="py-8">
+    <div className="p-6">
+      <Link
+        href="/apply"
+        className="bg-blue-300 py-2 px-8 rounded-2xl border border-blue-700"
+      >
+        Apply
+      </Link>
+      <List data={newData} />
+      <div className="text-purple-500 font-bold text-xl w-1/4 mx-auto">
+        <div className="py-8 flex flex-col gap-8">
           <button
             className="border-purple-500 border py-2 px-6 rounded-lg"
             onClick={() => setIsOpen(true)}
           >
-            Open
+            Open Modal
+          </button>
+          <button
+            className="border-blue-400 rounded-md font-lg font-semibold px-6 py-1.5"
+            onClick={notificationToast}
+          >
+            Show Toast
           </button>
         </div>
-        <Breadcrumb />
       </div>
-      <List data={newData} />
       <Footer />
     </div>
   );
