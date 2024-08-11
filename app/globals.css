@@ -45,7 +45,7 @@
 }
 
 :root:has(.no-doc-scroll) {
-  position: fixed;
+  overflow: hidden;
 }
 
 @media (prefers-color-scheme: dark) {

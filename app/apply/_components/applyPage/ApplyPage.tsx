@@ -16,9 +16,9 @@ const renderModalContents = () => {
 export const ApplyPage: FC = () => {
   const { openModal } = useModalStore();
   return (
-    <div className="portal p-6">
+    <div className="w-full min-h-[100svh] p-6">
       <Breadcrumb />
-      <div className="py-8 flex flex-col gap-6 w-1/5 mr-auto">
+      <div className="py-8 w-1/6 flex flex-col gap-6 mr-auto">
         <button
           onClick={errorToast}
           className="px-6 py-2 rounded-xl border border-lime-500 font-normal text-lg"

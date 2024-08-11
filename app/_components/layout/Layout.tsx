@@ -1,7 +1,6 @@
 "use client";
 
 import { FC, ReactNode } from "react";
-import { useModalStore } from "@/app/_store/store";
 import { Portal } from "../portal/Portal";
 import { Nav } from "../nav/Nav";
 import { Footer } from "../footer/Footer";
@@ -11,15 +10,9 @@ type LayoutProps = {
 };
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
-  const { isModalOpen, modalContents, closeModal } = useModalStore();
-
   return (
-    <div className="layout">
-      <Portal
-        isModalOpen={isModalOpen}
-        onClose={closeModal}
-        modalContents={modalContents}
-      />
+    <div className="w-full min-h-[100svh]">
+      <Portal />
       <Nav />
       {children}
       <Footer />
