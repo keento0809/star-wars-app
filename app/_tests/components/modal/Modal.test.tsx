@@ -12,11 +12,7 @@ describe("Modal", () => {
     const onCloseMock = jest.fn();
     const user = userEvent.setup();
 
-    render(
-      <Modal onClose={onCloseMock}>
-        <div>Modal contents</div>
-      </Modal>
-    );
+    render(<Modal />);
 
     const modalContents = screen.getByText(/modal/i);
     const closeButton = screen.getByLabelText("close");

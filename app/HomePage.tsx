@@ -29,19 +29,6 @@ const ModalContents: FC = () => {
 export const HomePage: FC<HomePageProps> = ({ data }) => {
   const { openModal } = useModalStore();
 
-  function add(a: number, b: number): number {
-    return a + b;
-  }
-  type AddParameters = { a: number; b: boolean };
-
-  type Ace<T extends (args: AddParameters) => any> = T extends (
-    ...args: infer U
-  ) => any
-    ? U
-    : never;
-
-  type Tes = Ace<() => void>;
-
   const newData = data.map((d) => {
     return { ...d, type: "film" };
   });

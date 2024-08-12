@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { X } from "lucide-react";
 import { useModal } from "./_hooks/useModal";
 import { useModalStore } from "@/app/_store/store";
