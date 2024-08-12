@@ -1,7 +1,6 @@
 import { Modal } from "@/app/_components/modal/Modal";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { useRouter } from "next/navigation";
 
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),
@@ -12,11 +11,7 @@ describe("Modal", () => {
     const onCloseMock = jest.fn();
     const user = userEvent.setup();
 
-    render(
-      <Modal onClose={onCloseMock}>
-        <div>Modal contents</div>
-      </Modal>
-    );
+    render(<Modal />);
 
     const modalContents = screen.getByText(/modal/i);
     const closeButton = screen.getByLabelText("close");
