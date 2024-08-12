@@ -5,6 +5,7 @@ import { useModalStore } from "@/app/_store/store";
 
 export const Modal: FC = () => {
   const { isModalOpen, modalContents, closeModal } = useModalStore();
+
   useModal();
 
   return isModalOpen ? (

@@ -1,7 +1,6 @@
 import { Modal } from "@/app/_components/modal/Modal";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { useRouter } from "next/navigation";
 
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),
