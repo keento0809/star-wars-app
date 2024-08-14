@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Layout } from "./_components/layout/Layout";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+export const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("PRODUCTION_SITE_URL"),
+  // metadataBase: new URL("PRODUCTION_SITE_URL"),
   title: {
     default: "star-wars-app",
     template: "star-wars-app | %s",

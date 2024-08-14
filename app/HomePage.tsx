@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { Film } from "./_graphql/generated";
 import { List } from "./_components/list/List";
-import { useCountStore, useModalStore } from "./_store/store";
+import { useModalStore } from "./_store/store";
 import { notificationToast } from "./_components/toast/Toast";
 import Link from "next/link";
 import { AddButton } from "./_components/button/addButton/AddButton";
@@ -11,6 +11,15 @@ import { AddButton } from "./_components/button/addButton/AddButton";
 type HomePageProps = {
   data: Film[];
 };
+
+type UnionPackStatus = "draft" | "approved" | "shipped";
+
+const packStatus = new Set(["draft", "approved", "shipped"] as const);
+type TypeFormSet<T extends Set<any>> = T extends Set<infer U> ? U : never;
+type PackingStatus = TypeFormSet<typeof packStatus>;
+
+const obje = { a: "a", b: "b" };
+console.log(Object.values(obje), typeof Object.values(obje));
 
 const ModalContents: FC = () => {
   return (
