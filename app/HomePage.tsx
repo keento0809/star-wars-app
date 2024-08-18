@@ -12,15 +12,6 @@ type HomePageProps = {
   data: Film[];
 };
 
-type UnionPackStatus = "draft" | "approved" | "shipped";
-
-const packStatus = new Set(["draft", "approved", "shipped"] as const);
-type TypeFormSet<T extends Set<any>> = T extends Set<infer U> ? U : never;
-type PackingStatus = TypeFormSet<typeof packStatus>;
-
-const obje = { a: "a", b: "b" };
-console.log(Object.values(obje), typeof Object.values(obje));
-
 const ModalContents: FC = () => {
   return (
     <div className="flex flex-col gap-4">
@@ -41,6 +32,9 @@ export const HomePage: FC<HomePageProps> = ({ data }) => {
   const newData = data.map((d) => {
     return { ...d, type: "film" };
   });
+
+  const str = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, error`;
+  console.log("土ナール、", str.startsWith("a"));
 
   return (
     <div className="p-6 mt-10">
