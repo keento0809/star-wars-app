@@ -1,3 +1,5 @@
+import { HomePresentation } from "./presentation";
+
 export const HomeContainer = () => {
-  return <div>HomeContainer</div>;
+  return <HomePresentation></HomePresentation>;
 };

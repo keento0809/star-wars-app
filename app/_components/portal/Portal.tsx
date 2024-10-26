@@ -12,7 +12,7 @@ export const Portal: FC = () => {
     setIsMounted(true);
   }, []);
 
-  return mounted && typeof window === "object"
+  return mounted
     ? createPortal(
         <>
           <Modal />
