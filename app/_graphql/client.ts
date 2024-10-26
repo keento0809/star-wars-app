@@ -1,56 +1,11 @@
-import { gql } from "@apollo/client";
+import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
+import { registerApolloClient } from "@apollo/experimental-nextjs-app-support";
 
-export const QUERY_GET_TEST = gql`
-  query getTest {
-    allFilms {
-      films {
-        title
-        director
-        releaseDate
-        speciesConnection {
-          species {
-            name
-            classification
-            homeworld {
-              name
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-export const QUERY_SPECIES = gql`
-  query getSpecies {
-    species {
-      name
-      classification
-      homeworld {
-        name
-      }
-    }
-  }
-`;
-
-export const QUERY_FILMS = gql`
-  query getFilms {
-    allFilms {
-      films {
-        id
-        title
-        releaseDate
-        created
-        director
-        characterConnection {
-          characters {
-            birthYear
-            created
-            edited
-          }
-          totalCount
-        }
-      }
-    }
-  }
-`;
+export const { getClient } = registerApolloClient(() => {
+  return new ApolloClient({
+    cache: new InMemoryCache(),
+    link: new HttpLink({
+      uri: "https://swapi-graphql.netlify.app/.netlify/functions/index",
+    }),
+  });
+});

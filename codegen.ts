@@ -5,7 +5,7 @@ const config: CodegenConfig = {
   schema: "https://swapi-graphql.netlify.app/.netlify/functions/index",
   documents: "app/**/*.graphql",
   generates: {
-    "app/graphql/generated.ts": {
+    "app/_graphql/generated.ts": {
       plugins: ["typescript", "typescript-operations"],
       config: {
         withHooks: true,

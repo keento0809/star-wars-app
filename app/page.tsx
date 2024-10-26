@@ -1,14 +1,7 @@
-import { getFilmData } from "./_lib/client";
-import { HomePage } from "./HomePage";
+import { HomeContainer } from "./_containers/home";
 
-export default async function Home() {
-  try {
-    const validData = await getFilmData();
+export default function Home() {
+  // const validData = await getFilmData();
 
-    return <HomePage data={validData} />;
-  } catch (error) {
-    console.error(error);
-
-    throw new Error(`failed to fetch data: ${error}`);
-  }
+  return <HomeContainer />;
 }
