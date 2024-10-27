@@ -1,22 +1,3 @@
-query Test {
-  allFilms {
-    films {
-      title
-      director
-      releaseDate
-      speciesConnection {
-        species {
-          name
-          classification
-          homeworld {
-            name
-          }
-        }
-      }
-    }
-  }
-}
-
 query Species {
   species {
     name
@@ -43,6 +24,18 @@ query Films {
         }
         totalCount
       }
+    }
+  }
+}
+
+query GetAllFilms {
+  allFilms {
+    films {
+      id
+      title
+      releaseDate
+      director
+      openingCrawl
     }
   }
 }

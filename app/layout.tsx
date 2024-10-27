@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Layout } from "./_components/layout/Layout";
+import { RootClient } from "./_components/rootClient/RootClient";
 import { Inter } from "next/font/google";
 
 export const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  // metadataBase: new URL("PRODUCTION_SITE_URL"),
   title: {
     default: "star-wars-app",
     template: "star-wars-app | %s",
@@ -36,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Layout>{children}</Layout>
+        <RootClient>{children}</RootClient>
       </body>
     </html>
   );

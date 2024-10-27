@@ -9,7 +9,7 @@ type LayoutProps = {
   children: ReactNode;
 };
 
-export const Layout: FC<LayoutProps> = ({ children }) => {
+export const RootClient: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="w-full min-h-[100svh]">
       <Portal />
