@@ -22,11 +22,6 @@ export const HomePresentation: FC<HomePresentationProps> = ({ allFilms }) => {
           <Film className="h-8 w-8 text-blue-600" />
           <h1 className="text-3xl font-bold text-gray-900">Star Wars Films</h1>
         </div>
-        <input
-          className="block my-12 border border-slate-600 rounded-lg py-1.5 pl-2"
-          type="text"
-          onChange={(e) => console.log("on page.tsx: ", e.target.value)}
-        />
         <SearchBar />
       </div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

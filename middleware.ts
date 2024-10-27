@@ -1,24 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
-import { generateCsp } from "./app/_lib/csp";
+// import { generateCsp } from "./app/_lib/csp";
 
 export function middleware(request: NextRequest) {
-  const { nonce, contentSecurityPolicyHeaderValue } = generateCsp();
+  // const { nonce, contentSecurityPolicyHeaderValue } = generateCsp();
 
   const requestHeaders = new Headers(request.headers);
 
   // requestHeaders.set("x-nonce", nonce);
-  requestHeaders.set(
-    "Content-Security-Policy",
-    contentSecurityPolicyHeaderValue
-  );
+  // requestHeaders.set(
+  //   "Content-Security-Policy",
+  //   contentSecurityPolicyHeaderValue
+  // );
 
   const response = NextResponse.next({
     headers: requestHeaders,
   });
-  response.headers.set(
-    "Content-Security-Policy",
-    contentSecurityPolicyHeaderValue
-  );
+  // response.headers.set(
+  //   "Content-Security-Policy",
+  //   contentSecurityPolicyHeaderValue
+  // );
 
   return response;
 }
