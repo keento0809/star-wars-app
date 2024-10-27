@@ -6,7 +6,7 @@ import { List } from "./_components/list/List";
 import { useModalStore } from "./_store/store";
 import { notificationToast } from "./_components/toast/Toast";
 import Link from "next/link";
-import { AddButton } from "./_components/button/addButton/AddButton";
+import { AddButton } from "./_components/buttons/addButton/AddButton";
 
 type HomePageProps = {
   data: Film[];
