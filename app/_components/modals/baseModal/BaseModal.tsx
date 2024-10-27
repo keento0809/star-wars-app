@@ -2,10 +2,10 @@
 
 import { FC } from "react";
 import { X } from "lucide-react";
-import { useModal } from "./_hooks/useModal";
+import { useModal } from "./_hooks/useBaseModal";
 import { useModalStore } from "@/app/_store/store";
 
-export const Modal: FC = () => {
+export const BaseModal: FC = () => {
   const { isModalOpen, modalContents, closeModal } = useModalStore();
 
   useModal();

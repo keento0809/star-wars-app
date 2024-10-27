@@ -1,9 +1,9 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import { Modal } from "../modal/Modal";
 import { Toast } from "../toast/Toast";
 import { createPortal } from "react-dom";
+import { FilmModal } from "../modals/filmModal/FilmModal";
 
 export const Portal: FC = () => {
   const [mounted, setIsMounted] = useState(false);
@@ -15,7 +15,7 @@ export const Portal: FC = () => {
   return mounted
     ? createPortal(
         <>
-          <Modal />
+          <FilmModal />
           <Toast />
         </>,
         document.body
