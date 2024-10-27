@@ -19,7 +19,6 @@ type TypeFormSet<T extends Set<any>> = T extends Set<infer U> ? U : never;
 type PackingStatus = TypeFormSet<typeof packStatus>;
 
 const obje = { a: "a", b: "b" };
-console.log(Object.values(obje), typeof Object.values(obje));
 
 const ModalContents: FC = () => {
   return (

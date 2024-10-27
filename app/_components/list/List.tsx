@@ -7,7 +7,6 @@ type ListProps<T> = {
 };
 
 export const List = <T extends Film>({ data }: ListProps<T>) => {
-  console.log("d: ", data[0]);
   return (
     <ul className="flex flex-wrap items-center gap-8">
       {data?.map((d) => {

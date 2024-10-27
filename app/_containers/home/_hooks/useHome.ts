@@ -2,17 +2,26 @@
 
 import { Film } from "@/app/_graphql/generated";
 import { useFilmsStore } from "@/app/_store/store";
+import { useEffect, useMemo } from "react";
 
 type UseHomeProps = {
   allFilms: Film[];
 };
 
 export const useHome = ({ allFilms }: UseHomeProps) => {
-  const { searchQuery } = useFilmsStore();
+  const { searchQuery, setFilteredFilmsCount } = useFilmsStore();
 
-  const filteredFilms = allFilms?.filter((film: any) =>
-    film.title.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredFilms = useMemo(
+    () =>
+      allFilms?.filter((film: Film) =>
+        film?.title?.toLowerCase().includes(searchQuery.toLowerCase())
+      ),
+    [searchQuery, allFilms]
   );
+
+  useEffect(() => {
+    setFilteredFilmsCount(filteredFilms.length);
+  }, [filteredFilms.length, setFilteredFilmsCount]);
 
   return {
     filteredFilms,

@@ -20,6 +20,8 @@ type FilmsStore = {
   setSearchQuery: (query: string) => void;
   selectedFilm: Film | null;
   setSelectedFilm: (film: Film | null) => void;
+  filteredFilmsCount: number;
+  setFilteredFilmsCount: (filteredFilmsCount: number) => void;
 };
 
 export const useCountStore = create<CountStore>((set) => ({
@@ -38,7 +40,9 @@ export const useModalStore = create<ModalStore>((set) => ({
 
 export const useFilmsStore = create<FilmsStore>((set) => ({
   searchQuery: "",
-  setSearchQuery: (query) => set({ searchQuery: query }),
   selectedFilm: null,
+  filteredFilmsCount: 0,
+  setSearchQuery: (query) => set({ searchQuery: query }),
   setSelectedFilm: (film) => set({ selectedFilm: film }),
+  setFilteredFilmsCount: (count) => set({ filteredFilmsCount: count }),
 }));
