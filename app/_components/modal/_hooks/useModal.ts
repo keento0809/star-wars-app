@@ -1,5 +1,3 @@
-"use client";
-
 import { useModalStore } from "@/app/_store/store";
 import { useEffect } from "react";
 

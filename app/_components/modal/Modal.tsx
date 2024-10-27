@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import { X } from "lucide-react";
 import { useModal } from "./_hooks/useModal";
