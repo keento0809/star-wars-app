@@ -1,4 +1,4 @@
-// import { useFilmsStore } from '@/lib/store';
+import { useFilmsStore } from "@/app/_store/store";
 import { Calendar, User } from "lucide-react";
 
 interface FilmCardProps {
@@ -16,12 +16,14 @@ export function FilmCard({
   director,
   openingCrawl,
 }: FilmCardProps) {
-  //   const { setSelectedFilm } = useFilmsStore();
+  const { setSelectedFilm } = useFilmsStore();
 
   return (
     <div
       className="group cursor-pointer rounded-lg bg-white p-6 shadow-lg transition-all hover:shadow-xl"
-      //   onClick={() => setSelectedFilm({ id, title, releaseDate, director, openingCrawl })}
+      onClick={() =>
+        setSelectedFilm({ id, title, releaseDate, director, openingCrawl })
+      }
       data-testid="film-card"
     >
       <h3 className="mb-2 text-xl font-bold text-gray-900">{title}</h3>

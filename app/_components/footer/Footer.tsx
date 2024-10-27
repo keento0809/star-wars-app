@@ -8,7 +8,7 @@ export const Footer = () => {
         <option value="english">ENG</option>
       </select>
       <p className="text-xs py-2">
-        &copy; Kento Honda: all rights are reserved
+        &copy; Kento Honda: All rights are reserved
       </p>
     </footer>
   );
