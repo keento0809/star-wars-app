@@ -1,7 +1,7 @@
 "use client";
 
 import { Film } from "@/app/_graphql/generated";
-import { useFilmsStore } from "@/app/_store/store";
+import { useFilmsStore } from "@/app/_store/_hooks/films/useFilmsStore";
 import { useEffect, useMemo } from "react";
 
 type UseHomeProps = {

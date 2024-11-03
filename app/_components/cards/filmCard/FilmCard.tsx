@@ -1,4 +1,4 @@
-import { useFilmsStore } from "@/app/_store/store";
+import { useFilmsStore } from "@/app/_store/_hooks/films/useFilmsStore";
 import { Calendar, User } from "lucide-react";
 
 interface FilmCardProps {

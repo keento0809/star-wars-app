@@ -1,8 +1,9 @@
-import { useFilmsStore } from "@/app/_store/store";
+import { useFilmsStore } from "@/app/_store/_hooks/films/useFilmsStore";
 import { X } from "lucide-react";
 
 export function FilmModal() {
   const { selectedFilm, setSelectedFilm } = useFilmsStore();
+
   if (!selectedFilm) return null;
 
   return (

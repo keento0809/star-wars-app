@@ -1,4 +1,3 @@
-import { useFilmsStore } from "@/app/_store/store";
 import { Film } from "lucide-react";
 import Link from "next/link";
 import { FC } from "react";
