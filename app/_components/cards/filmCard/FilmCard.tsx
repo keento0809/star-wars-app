@@ -1,7 +1,7 @@
 import { useFilmsStore } from "@/app/_store/_hooks/films/useFilmsStore";
 import { Calendar, User } from "lucide-react";
 
-interface FilmCardProps {
+export interface FilmCardProps {
   id: string;
   title: string;
   releaseDate: string;

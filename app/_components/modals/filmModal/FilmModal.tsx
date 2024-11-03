@@ -7,12 +7,13 @@ export function FilmModal() {
   if (!selectedFilm) return null;
 
   return (
-    <>
+    <div className="fixed inset-0 z-40 flex items-center justify-center">
       <div
         onClick={() => setSelectedFilm(null)}
-        className="fixed inset-0 top-0 right-0 bottom-0 left-0 z-40 flex items-center justify-center bg-black bg-opacity-50 p-4"
+        className="absolute inset-0 bg-black bg-opacity-50"
+        data-testid="film-modal"
       />
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-[400px] max-h-[480px] overflow-y-auto rounded-lg bg-white p-6">
+      <div className="relative z-50 w-full max-w-[400px] max-h-[480px] overflow-y-auto rounded-lg bg-white p-6">
         <button
           onClick={() => setSelectedFilm(null)}
           className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
@@ -36,6 +37,6 @@ export function FilmModal() {
           {selectedFilm.openingCrawl}
         </p>
       </div>
-    </>
+    </div>
   );
 }
