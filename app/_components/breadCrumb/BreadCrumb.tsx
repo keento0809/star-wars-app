@@ -27,7 +27,7 @@ export const Breadcrumb = () => {
   };
 
   return (
-    <ul className="flex items-center gap-1 text-xs text-gray-purple">
+    <ul className="mx-auto px-8 pt-2 xl:max-w-7xl xl:px-2 flex items-center gap-1 text-xs text-gray-purple">
       {defaultBreadCrumb}
       {pathNames.map((link, index) => {
         const href = `/${pathNames.slice(0, index + 1).join("/")}`;

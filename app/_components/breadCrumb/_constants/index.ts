@@ -1,5 +1,5 @@
-type Label = "応募" | "お問い合わせ";
-type RouteKeyword = "contact" | "apply";
+type Label = "概要" | "お問い合わせ" | "カウンター";
+type RouteKeyword = "contact" | "about" | "counter";
 
 type BreadCrumbObject = {
   label: Label;
@@ -7,6 +7,7 @@ type BreadCrumbObject = {
 };
 
 export const BREADCRUMB_ARRAY: BreadCrumbObject[] = [
-  { label: "応募", routeKeyword: "apply" },
+  { label: "概要", routeKeyword: "about" },
   { label: "お問い合わせ", routeKeyword: "contact" },
+  { label: "カウンター", routeKeyword: "counter" },
 ] as const;
