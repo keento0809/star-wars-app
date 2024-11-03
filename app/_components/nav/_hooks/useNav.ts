@@ -1,4 +1,4 @@
-import { useFilmsStore } from "@/app/_store/store";
+import { useFilmsStore } from "@/app/_store/_hooks/films/useFilmsStore";
 
 export const useNav = () => {
   const { filteredFilmsCount } = useFilmsStore();

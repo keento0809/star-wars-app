@@ -1,4 +1,4 @@
-import { useFilmsStore } from "@/app/_store/store";
+import { useFilmsStore } from "@/app/_store/_hooks/films/useFilmsStore";
 import { Search } from "lucide-react";
 import { FC } from "react";
 
