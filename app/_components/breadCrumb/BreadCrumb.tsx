@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { BREADCRUMB_ARRAY } from "./_constants";
+import { BREADCRUMB_ARRAY } from "./_constants/breadCrumb";
 
 export const Breadcrumb = () => {
   const paths = usePathname();
