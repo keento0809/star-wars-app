@@ -3,7 +3,6 @@ import { Portal } from "@/app/_components/portal/Portal";
 import { SearchBar } from "@/app/_components/searchBar/SearchBar";
 import { useFilmsStore } from "@/app/_store/_hooks/films/useFilmsStore";
 import { act, fireEvent, render, screen } from "@testing-library/react";
-import { before } from "node:test";
 
 jest.mock("../../../../app/_store/_hooks/films/useFilmsStore");
 

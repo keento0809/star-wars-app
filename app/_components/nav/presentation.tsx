@@ -1,3 +1,5 @@
+"use client";
+
 import { useFilmsStore } from "@/app/_store/_hooks/films/useFilmsStore";
 import { Film } from "lucide-react";
 import Link from "next/link";
