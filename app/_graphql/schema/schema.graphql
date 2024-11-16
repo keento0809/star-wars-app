@@ -1,10 +1,20 @@
 query Species {
   species {
+    id
     name
-    classification
-    homeworld {
-      name
-    }
+    # classification
+    # designation
+    # averageHeight
+    # averageLifespan
+    # eyeColors
+    # hairColors
+    # skinColors
+    # language
+    # homeworld {
+    #   name
+    # }
+    # created
+    # edited
   }
 }
 

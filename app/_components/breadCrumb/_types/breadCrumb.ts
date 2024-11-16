@@ -1,5 +1,5 @@
-type Label = "概要" | "お問い合わせ" | "カウンター";
-type RouteKeyword = "contact" | "about" | "counter";
+type Label = "概要" | "お問い合わせ" | "カウンター" | "キャラクター";
+type RouteKeyword = "contact" | "about" | "counter" | "characters";
 
 type BreadCrumbObj = {
   label: Label;

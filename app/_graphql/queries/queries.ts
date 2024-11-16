@@ -35,3 +35,28 @@ export const QUERY_FILMS = gql`
     }
   }
 `;
+
+export const QUERY_GET_SPECIES = gql`
+  query getAllSpecies {
+    allSpecies {
+      species {
+        id
+        name
+        classification
+        designation
+        averageHeight
+        averageLifespan
+        eyeColors
+        hairColors
+        skinColors
+        language
+        homeworld {
+          id
+          name
+        }
+        created
+        edited
+      }
+    }
+  }
+`;
