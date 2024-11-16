@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { BREADCRUMB_ARRAY } from "./_constants/breadCrumb";
 
-export const Breadcrumb = () => {
+export const BreadcrumbPresentation = () => {
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
 
