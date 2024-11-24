@@ -7,5 +7,10 @@ export const { getClient } = registerApolloClient(() => {
     link: new HttpLink({
       uri: "https://swapi-graphql.netlify.app/.netlify/functions/index",
     }),
+    defaultOptions: {
+      watchQuery: {
+        fetchPolicy: "cache-first",
+      },
+    },
   });
 });

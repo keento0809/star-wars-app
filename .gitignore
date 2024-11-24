@@ -38,3 +38,6 @@ next-env.d.ts
 
 # codegen
 app/**/generated.ts
+
+# analytics
+/analyze

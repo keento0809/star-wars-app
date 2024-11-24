@@ -9,12 +9,14 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "codegen": "graphql-codegen --config codegen.ts",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@apollo/client": "^3.10.8",
     "@apollo/experimental-nextjs-app-support": "^0.11.2",
     "@hookform/resolvers": "^3.9.1",
+    "@next/bundle-analyzer": "^15.0.3",
     "@testing-library/dom": "^10.4.0",
     "axios": "^1.7.2",
     "graphql": "^16.9.0",

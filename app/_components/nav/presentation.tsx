@@ -16,6 +16,11 @@ export const NavPresentation: FC = () => {
         <Film className="h-8 w-8 text-blue-600" />
         <span className="font-semibold">SWF</span>
       </Link>
+      <div>
+        <Link href="/dashboard" className="text-xs">
+          Dashboard
+        </Link>
+      </div>
       {pathname === "/" ? (
         <span>
           <strong>{filteredFilmsCount}</strong> hits
