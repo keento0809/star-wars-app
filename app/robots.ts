@@ -1,6 +1,11 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const BASE_URL =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "PRODUCTION_SITE_URL";
+
   return {
     rules: [
       {
@@ -9,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: ["/$", "/sign-up", "/sitemap.xml"],
       },
     ],
-    sitemap: `PRODUCTION_SITE_URL/sitemap.xml`,
+    sitemap: `${BASE_URL}/sitemap.xml`,
     host: "",
   };
 }
